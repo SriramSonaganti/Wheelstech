@@ -1,0 +1,54 @@
+<div class="container ">
+
+    <div class="container text-center">
+        <h1>
+            Add post
+        </h1>
+        <div class="!posted">
+            <div class="form-group form-control border">
+                <input 
+                    type="text" 
+                    class="form-control border w-25"  
+                    id="title" name="title" 
+                    placeholder="Enter Title Here" 
+                    required
+                    [(ngModel)]="post.title"
+                ><br>
+                <input 
+                    type="text" 
+                    class="form-control border w-25"  
+                    id="subtitle" name="subtitle"
+                    placeholder="Enter Caption Here" 
+                    required
+                    [(ngModel)]="post.subtitle"
+                ><br>
+                <input 
+                    type="text" 
+                    class="form-control border w-50"  
+                    id="img" name="img" 
+                    placeholder="image url here" 
+                    required
+                    [(ngModel)]="post.img"
+                >
+                <br>
+                <br>
+                <div class="form-group form-control border">
+                    <editor [(ngModel)]="post.description"
+                        apiKey="jjy2utbku66m5m9sv8rzb6fbymtaek77vuqjl4l0sfaz31g0" 
+                        [init]="{plugins: 'link'}">
+                    </editor>
+                </div>
+                <button (click)="addPost()" class="btn btn-success">Submit</button>
+
+            </div>
+
+            <div *ngIf="posted">
+                <h4>Post added sucessfully</h4>
+                <button class="btn btn-success" (click)="savePost()">Add</button>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,25 @@
+<div class="container py-4 table-responsive">
+    <table class="table table-dark table-hover ">
+        <thead>
+            <tr >
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+            <th scope="col">Username</th>
+            <th scope="col">CreatedOn</th>
+            <th scope="col">UpdatedOn</th>
+            <th scope="col">Edit</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let p of post">
+                <th scope="row">i</th>
+                <td>{{p.title}}</td>
+                <td>{{p.username}}</td>
+                <td>{{p.updatedOn}}</td>
+                <td>{{p.createdOn}}</td>
+                <td>edit post</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+

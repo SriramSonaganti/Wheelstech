@@ -1,0 +1,62 @@
+  
+      <!--Main layout-->
+      <main class="my-5">
+        <div class="container">
+          <div id="intro" class="p-5 text-center bg-light">
+            <h1 class="mb-3 h2">place for ads</h1>
+
+          </div>
+          <!--Section: Content-->
+          <br>
+          <section class="text-center">
+            <h4 class="mb-5"><strong>Latest posts</strong></h4>
+    
+            <div class="row">
+              <div class="col-lg-4 col-md-12 mb-4" *ngFor="let p of post">
+                <div class="card">
+                  <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                    <img src="{{p.img}}" class="img-fluid" />
+                    <a href="#!">
+                      <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                    </a>
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">{{p.title}}</h5>
+                    <p class="card-text">
+                      {{p.subtitle}}
+                    </p>
+                    <a routerLink="blog-view/{{p.id}}" class="btn btn-primary">Read this</a>
+                  </div>
+                </div>
+              </div>
+    
+            </div>
+    
+          </section>
+          <!--Section: Content-->
+
+           <!-- Jumbotron -->
+        <div id="intro" class="p-5 text-center bg-light">
+            <h1 class="mb-3 h2">place for ads</h1>
+          </div>
+          <!-- Jumbotron -->
+    
+          <!-- Pagination -->
+          <nav class="my-4" aria-label="...">
+            <ul class="pagination pagination-circle justify-content-center">
+              <li class="page-item">
+                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">1</a></li>
+              <li class="page-item active" aria-current="page">
+                <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item">
+                <a class="page-link" href="#">Next</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </main>
+      <!--Main layout-->
