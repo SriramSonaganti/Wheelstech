@@ -23,15 +23,15 @@ export class AppComponent implements OnInit {
       const user = this.tokenStorageService.getUser();
       this.roles = user.roles;
 
-      this.showAdminBoard = this.roles.includes('ROLE_ADMIN');
-      this.showModeratorBoard = this.roles.includes('ROLE_MODERATOR');
-
       this.username = user.username;
+      console.log( this.isLoggedIn = !!this.tokenStorageService.getToken())
+      console.log(user);
     }
   }
 
   logout(): void {
     this.tokenStorageService.signOut();
+    this.isLoggedIn=false;
     window.location.reload();
   }
 

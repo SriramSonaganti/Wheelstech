@@ -9,6 +9,8 @@ const USER_KEY = 'auth-user';
 })
 export class TokenStorageService {
 
+  
+
   constructor() { }
 
   signOut(): void {
@@ -24,9 +26,14 @@ export class TokenStorageService {
     return window.sessionStorage.getItem(TOKEN_KEY);
   }
 
+  isloggedIn(): boolean {
+    return true
+  }
+
   public saveUser(user: any): void {
     window.sessionStorage.removeItem(USER_KEY);
     window.sessionStorage.setItem(USER_KEY, JSON.stringify(user));
+    
   }
 
   public getUser(): any {

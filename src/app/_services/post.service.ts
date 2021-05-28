@@ -4,7 +4,7 @@ import { Observable } from 'rxjs/internal/Observable';
 import { Post } from '../models/post.model';
 
 
-const Url = 'https://cc346efa61fb.ngrok.io/api/'
+const Url = 'http://localhost:8080/api/'
 
 @Injectable({
   providedIn: 'root'
@@ -29,6 +29,14 @@ export class PostService {
   
   get(id: any): Observable<Post> {
     return this.http.get(Url + 'get/' +`${id}`);
+  }
+
+  updatePost( id:any, data:any): Observable<any> {
+    return this.http.put(Url + 'update/' +`${id}`,data);
+  }
+
+  deletePost( id:any): Observable<any> {
+    return this.http.delete(Url +'delete/' +`${id}`);
   }
   
 }

@@ -1,15 +1,15 @@
 
-<nav class="navbar navbar-expand-lg navbar-dark shadow-sm bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark shadow-sm">
   <div class="container-fluid">
     <a  class="navbar-brand col-sm-4 offset-md-1 py-2" routerLink="/">
-     /// <img src="https://wheelstech.in/wp-content/uploads/2021/02/cropped-transparent-2-2048x656.png" alt="Icon" width="170" height="50">
+     /// <img src="https://firebasestorage.googleapis.com/v0/b/books-68839.appspot.com/o/_tech.png?alt=media&token=f18866e8-3536-406a-b169-0b23af5c993e" alt="Icon" width="170" height="50">
      ///
       </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse"  id="navbarSupportedContent">
-      <ul class="nav navbar-nav ms-auto col-sm-4 offset-md-1 py-2">
+      <ul class="nav navbar-nav ms-auto col-sm-5 offset-md-1 py-2">
         <li class="nav-item">
           <a class="nav-link " aria-current="page" routerLink="/">Home</a>
         </li>
@@ -19,9 +19,24 @@
         <li class="nav-item">
           <a class="nav-link" routerLink="about">About</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="login">login</a>
+       
+        <li class="nav-item dropdown" *ngIf="isLoggedIn">
+          <a class="nav-link dropdown-toggle"
+            id="navbarDropdownMenuLink" 
+            role="button" 
+            data-bs-toggle="dropdown" 
+            aria-expanded="false">
+            Profile
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">      
+            <li><a class="dropdown-item" routerLink="admin">Posts</a></li>
+            <li><a class="dropdown-item" routerLink="addPost">Add Post</a></li>
+            <li class="nav-item" *ngIf="isLoggedIn">
+              <a class="dropdown-item" (click)="logout()">logout</a>
+            </li>
+          </ul>
         </li>
+       
       </ul>
     </div>
   </div>
@@ -29,91 +44,77 @@
 
 
 <router-outlet></router-outlet>
-
-<!-- Footer -->
-<footer class="text-center bg-dark text-white bd-footer py-5 mt-5 bg-light">
-  <!-- Grid container -->
-  <div class="container p-4">
-
-    <section class="mb-4">
-
-      <!-- Twitter -->
-      <a class="btn btn-outline-light btn-floating m-1" href="https://twitter.com/tech_wheels" role="button"
-        ><i class="fab fa-twitter"></i
-      ></a>
-
-      <!-- Instagram -->
-      <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/wheels.tech/" role="button"
-        ><i class="fab fa-instagram"></i
-      ></a>
-
-      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-        ><i class="fab fa-reddit"></i
-      ></a>
-
-    </section>
-    <!-- Section: Social media -->
-
-
-    <!-- Section: Form -->
-    <section class="" >
-      <form action="">
-        <!--Grid row-->
-        <div class="row d-flex justify-content-center">
-          <!--Grid column-->
-          <div class="col-auto">
-            <p class="pt-2">
-              <strong>Sign up for our newsletter</strong>
-            </p>
-          </div>
-          <!--Grid column-->
-
-          <!--Grid column-->
-          <div class="col-md-5 col-12">
-            <!-- Email input -->
-            <div class="form-outline mb-4">
-              <input type="email" id="form5Example2" placeholder="Email" class="form-control" />
+<div class="d-flex flex-column ">
+  <footer class=" text-center bg-dark text-white  mt-auto">
+    <!-- Grid container -->
+    <div class="container p-4">
+      <div class="sm">
+        <a href="https://www.instagram.com/wheels.tech/" target="_blank"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+        <a href="https://twitter.com/tech_wheels" target="_blank"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+        <a href="#"><i class="fab fa-reddit" aria-hidden="true"></i></a>
+    </div>
+    
+   
+      <!-- Section: Form -->
+      <section class="" >
+        <form action="">
+          <!--Grid row-->
+          <div class="row d-flex justify-content-center">
+            <!--Grid column-->
+            <div class="col-auto">
+              <p class="pt-2">
+                <strong>Sign up for our newsletter</strong>
+              </p>
             </div>
+            <!--Grid column-->
+   
+            <!--Grid column-->
+            <div class="col-md-5 col-12">
+              <!-- Email input -->
+              <div class="form-outline mb-4">
+                <input type="email" id="form5Example2" placeholder="Email" class="form-control" />
+              </div>
+            </div>
+            <!--Grid column-->
+   
+            <!--Grid column-->
+            <div class="col-auto">
+   
+              <!-- Submit button -->
+              <button type="submit" class="btn btn-primary mb-4">
+                Subscribe
+              </button>
+            </div>
+            <!--Grid column-->
           </div>
-          <!--Grid column-->
-
-          <!--Grid column-->
-          <div class="col-auto">
-
-            <!-- Submit button -->
-            <button type="submit" class="btn btn-primary mb-4">
-              Subscribe
-            </button>
-          </div>
-          <!--Grid column-->
-        </div>
-        <!--Grid row-->
-      </form>
-    </section>
-    <!-- Section: Form -->
-
-
-    <!-- Section: Text -->
-    <section class="mb-4">
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
-        distinctio earum repellat quaerat voluptatibus placeat nam,
-        commodi optio pariatur est quia magnam eum harum corrupti dicta,
-        aliquam sequi voluptate quas.
-      </p>
-    </section>
-    <!-- Section: Text -->
-
-
+          <!--Grid row-->
+        </form>
+      </section>
+      <!-- Section: Form -->
+   
+   
+      <!-- Section: Text -->
+      <section class="mb-4">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
+          distinctio earum repellat quaerat voluptatibus placeat nam,
+          commodi optio pariatur est quia magnam eum harum corrupti dicta,
+          aliquam sequi voluptate quas.
+        </p>
+      </section>
+      <!-- Section: Text -->
+   
+   
+    </div>
+    <!-- Grid container -->
+   
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+      Â©2020 Copyright:
+      <a class="text-white" href="https://wheelstech.in/">wheelstech</a>
+    </div>
+    <!-- Copyright -->
+   
+  </footer>
   </div>
-  <!-- Grid container -->
-
-  <!-- Copyright -->
-  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.2)">
-    © 2020 Copyright:
-    <a class="text-white" href="https://wheelstech.in/">wheelstech</a>
-  </div>
-  <!-- Copyright -->
-
-</footer>
-<!-- Footer -->
+  <!-- Footer -->

@@ -4,7 +4,7 @@
         <h1>
             Add post
         </h1>
-        <div class="!posted">
+        <div class="!edited">
             <div class="form-group form-control border">
                 <input 
                     type="text" 
@@ -12,7 +12,7 @@
                     id="title" name="title" 
                     placeholder="Enter Title Here" 
                     required
-                    [(ngModel)]="post.title"
+                    [(ngModel)]="currentPost.title"
                 ><br>
                 <input 
                     type="text" 
@@ -20,7 +20,7 @@
                     id="subtitle" name="subtitle"
                     placeholder="Enter Caption Here" 
                     required
-                    [(ngModel)]="post.subtitle"
+                    [(ngModel)]="currentPost.subtitle"
                 ><br>
                 <input 
                     type="text" 
@@ -28,25 +28,22 @@
                     id="img" name="img" 
                     placeholder="image url here" 
                     required
-                    [(ngModel)]="post.img"
+                    [(ngModel)]="currentPost.img"
                 >
                 <br>
                 <br>
                 <div class="form-group form-control border">
-                    <editor [(ngModel)]="post.description"
+                    <editor [(ngModel)]="currentPost.description"
                         apiKey="jjy2utbku66m5m9sv8rzb6fbymtaek77vuqjl4l0sfaz31g0" 
                         [init]="{plugins: 'link'}">
                     </editor>
                 </div>
-                <br>
-                <br>
-                <button (click)="addPost()" class="btn btn-success">Submit</button>
+                <button (click)="Update()" class="btn btn-success">Submit</button>
 
             </div>
 
-            <div *ngIf="posted">
-                <h4>Post added sucessfully</h4>
-               
+            <div *ngIf="edited">
+                <h4>Post updated sucessfully</h4>
             </div>
 
         </div>

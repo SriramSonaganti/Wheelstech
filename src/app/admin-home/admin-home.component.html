@@ -7,19 +7,24 @@
             <th scope="col">Username</th>
             <th scope="col">CreatedOn</th>
             <th scope="col">UpdatedOn</th>
-            <th scope="col">Edit</th>
+            <th scope="col"> Actions</th>
+            
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let p of post">
-                <th scope="row">i</th>
+                <th scope="row">1</th>
                 <td>{{p.title}}</td>
                 <td>{{p.username}}</td>
                 <td>{{p.updatedOn}}</td>
                 <td>{{p.createdOn}}</td>
-                <td>edit post</td>
+                
+                <td>
+                    <button class="btn btn-success" routerLink="editPost/{{p.id}}">Edit</button>
+                    &nbsp;
+                    <button class="btn btn-danger" (click)="onSubmit(p.id)">Delete</button>
+                </td>
             </tr>
         </tbody>
     </table>
 </div>
-

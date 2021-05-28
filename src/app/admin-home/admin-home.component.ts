@@ -15,6 +15,7 @@ export class AdminHomeComponent implements OnInit {
   currentIndex = -1;
   title = '';
 
+
   constructor(private postService: PostService) { }
 
   ngOnInit(): void {
@@ -42,12 +43,19 @@ export class AdminHomeComponent implements OnInit {
   retrievePosts(): void {
     this.postService.getAll().subscribe(
       data => {
-        this.post = data;  
+        this.post = data;
+        console.log(data)
     });
     
   }
-  
-  
-  
 
+  onSubmit(id:any):void{
+    this.postService.deletePost(id).subscribe(
+      data => {
+        this.post = data;
+      }
+    );
+    window.location.reload();
+    console.log(id)
+  }
 }

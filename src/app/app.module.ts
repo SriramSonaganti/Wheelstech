@@ -14,6 +14,8 @@ import { BlogViewComponent } from './blog-view/blog-view.component';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { AddPostComponent } from './admin/add-post/add-post.component';
 import { EditorModule } from '@tinymce/tinymce-angular';
+import { BlogEditComponent } from './admin/blog-edit/blog-edit.component';
+import { SomecomComponent } from './somecom/somecom.component';
 
 
 @NgModule({
@@ -25,7 +27,9 @@ import { EditorModule } from '@tinymce/tinymce-angular';
     AboutComponent,
     BlogViewComponent,
     AdminHomeComponent,
-    AddPostComponent
+    AddPostComponent,
+    BlogEditComponent,
+    SomecomComponent
   ],
   imports: [
     BrowserModule,
